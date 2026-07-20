@@ -1,0 +1,131 @@
+import streamlit as st
+import pandas as pd
+import random
+
+# Configuración de la página
+st.set_page_config(
+    page_title="Asistente Inteligente de Pricing - Fruta",
+    page_icon="🍎",
+    layout="wide"
+)
+
+# ---------------------------------------------------------
+# 1. BARRA LATERAL (Sidebar) - Filtros y contexto comercial
+# ---------------------------------------------------------
+st.sidebar.header("⚙️ Configuración del Contexto")
+
+cliente_seleccionado = st.sidebar.selectbox(
+    "Selecciona Cliente / Cadena",
+    ["Mercadona", "Carrefour", "Lidl", "Aldi", "Eroski", "Otro"]
+)
+
+cluster_cliente = st.sidebar.selectbox(
+    "Perfil / Clúster de Punto de Venta",
+    [
+        "Cluster 0: Zonas de Renta Alta",
+        "Cluster 1: Gran Consumo / Sensibilidad Media",
+        "Cluster 2: Hard Discount / Sensibilidad Alta"
+    ]
+)
+
+producto_seleccionado = st.sidebar.selectbox(
+    "Variedad de Fruta",
+    ["Manzana Golden", "Manzana Fuji", "Pera Conferencia", "Melocotón", "Nectarina"]
+)
+
+mercado_referencia = st.sidebar.selectbox(
+    "Mercado Mayorista de Referencia",
+    ["Mercamadrid", "Mercabarna", "Mercasevilla", "Mercavalencia"]
+)
+
+st.sidebar.markdown("---")
+st.sidebar.info("💡 **Tip para la prueba piloto:** Utiliza los desplegables para predeterminar la información y consulta luego en el chat.")
+
+# ---------------------------------------------------------
+# 2. SIMULADOR DEL MODELO PREDICTIVO (XGBoost Mock)
+# ---------------------------------------------------------
+def simular_prediccion_xgboost(producto, cluster, volumen_kg):
+    """
+    Simulación de la lógica del modelo XGBoost entrenado (Sección 4.4 / 5.2 del TFM)
+    """
+    # Precios base aproximados segun producto
+    base_prices = {
+        "Manzana Golden": 1.15,
+        "Manzana Fuji": 1.30,
+        "Pera Conferencia": 1.20,
+        "Melocotón": 1.45,
+        "Nectarina": 1.50
+    }
+    precio_ref = base_prices.get(producto, 1.20)
+    
+    # Factor por cluster (sección 5.1 del TFM)
+    if "Cluster 0" in cluster:
+        factor_cluster = 1.15  # Mayor margen/tolerancia
+    elif "Cluster 1" in cluster:
+        factor_cluster = 1.00  # Sensibilidad media
+    else:
+        factor_cluster = 0.90  # Hard discount
+        
+    # Factor descuento por volumen
+    factor_volumen = 0.96 if volumen_kg >= 5000 else 1.00
+    
+    precio_estimado = round(precio_ref * factor_cluster * factor_volumen, 2)
+    rango_min = round(precio_estimado - 0.04, 2)
+    rango_max = round(precio_estimado + 0.03, 2)
+    
+    return precio_estimado, rango_min, rango_max, precio_ref
+
+# ---------------------------------------------------------
+# 3. INTERFAZ PRINCIPAL Y CHAT
+# ---------------------------------------------------------
+st.title("🍎 Asistente Conversacional de Pricing")
+st.caption("Sistema de apoyo a la decisión para la venta de fruta a cadenas de supermercados")
+
+# Historial de mensajes en sesión
+if "messages" not in st.session_state:
+    st.session_state.messages = [
+        {"role": "assistant", "content": "¡Hola! Soy tu asistente de precios. ¿En qué operación comercial puedo ayudarte hoy?"}
+    ]
+
+# Mostrar historial
+for message in st.session_state.messages:
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
+
+# Prompt del usuario
+if prompt := st.chat_input("Ej: Necesito ofertar 5.000 kg de manzana Golden para un cliente en Sevilla..."):
+    # Agregar mensaje del usuario
+    st.session_state.messages.append({"role": "user", "content": prompt})
+    with st.chat_message("user"):
+        st.markdown(prompt)
+
+    # Respuesta del asistente (simulación del flujo RAG + XGBoost)
+    with st.chat_message("assistant"):
+        with st.spinner("Analizando datos de Mercasa, INE y ejecutando modelo XGBoost..."):
+            
+            # Extraer simuladamente el volumen del texto
+            volumen_detectado = 5000 if "5.000" in prompt or "5000" in prompt else 2000
+            
+            # Ejecutar simulador de prediccion
+            precio_rec, p_min, p_max, p_merca = simular_prediccion_xgboost(
+                producto_seleccionado, cluster_cliente, volumen_detectado
+            )
+            
+            # Construir la respuesta estructurada estilo TFM
+            respuesta = f"""
+            **Precio recomendado:** **{precio_rec:.2f} €/kg**  *(Rango óptimo: {p_min:.2f} €/kg - {p_max:.2f} €/kg)*
+
+            ---
+            🔍 **Justificación de la recomendación:**
+            * **Perfil del Cliente:** Pertenece al **{cluster_cliente.split(':')[0]}**, caracterizado según el análisis de segmentación K-Means.
+            * **Precio de Referencia:** Precio modal en **{mercado_referencia}**: `{p_merca:.2f} €/kg`.
+            * **Evolución del Mercado:** Variación semanal del precio mayorista: `+2.0%`.
+            * **Volumen Solicitado:** `{volumen_detectado:,} kg` de {producto_seleccionado}.
+
+            *Nota: Recomendación adaptada para mantener un equilibrio entre competitividad y rentabilidad cumpliendo con la gobernanza y supervisión humana (AI Act).*
+            """
+            
+            st.markdown(respuesta)
+            
+            # Guardar respuesta en sesión
+            st.session_state.messages.append({"role": "assistant", "content": respuesta})
