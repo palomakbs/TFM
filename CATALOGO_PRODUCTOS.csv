@@ -1,0 +1,140 @@
+PRODUCTO;VARIEDAD;MARCA;ORIGEN;FORMATO;CATEGORIA;CALIBRE
+PLÁTANO;Cavendish;Platania;España;16,00;Plus;16+
+PLÁTANO;Cavendish;Platania;España;16,00;Roja;16+
+PLÁTANO;Cavendish;Platania;España;16,00;Primera;14+
+PLÁTANO;Cavendish;Platania;España;16,00;Segunda;14+
+PLÁTANO;Cavendish;Platania;España;9,00;Plus;16+
+PLÁTANO;Cavendish;Platania;España;9,00;Roja;14+
+PLÁTANO;Cavendish;Doramas;España;17,00;Super/Azul;16+
+PLÁTANO;Cavendish;Doramas;España;17,00;Extra/Blanca;16+
+PLÁTANO;Cavendish;Doramas;España;9,00;Negra;16+
+PLÁTANO;Cavendish;Coplaca BIO;España;17,00;BIO;16+
+PLÁTANO;Cavendish;Cerca Vieja;España;17,00;Súper;16+
+PLÁTANO;Cavendish;Cerca Vieja;España;9,00;Súper;16+
+PLÁTANO;Cavendish;Lairaga/Coplaca;España;17,00;Nature;16+
+PLÁTANO;Cavendish;Lairaga Súper;España;17,00;Súper;16+
+PLÁTANO;Cavendish;Lairaga;España;17,00;Primera;14+
+BANANA;Cavendish;Del Monte;Costa Rica;18,00;Premium;P20
+BANANA;Cavendish;Chiquita;Costa Rica;18,00;Premium;P20
+BANANA;Cavendish;Amorita;Ecuador;18,00;Premium;P20
+BANANA;Cavendish;UTC;Costa Rica;18,00;Standard;P19
+BANANA;Cavendish;Rosy;Costa Rica;18,00;Standard;P19
+BANANA;Cavendish;Amigo/ Savana;Costa Rica;18,00;Standard;P19
+BANANA;Cavendish;Comoe;Costa Marfil;18,00;Standard;P19
+BANANA;Cavendish;Small;Costa Rica;18,00;Premium;P14
+BANANA;Cavendish;Savana;Africa;18,00;Standard;P19
+MANZANA;Golden  Blanca (amarilla);Val Venosta;Italia;50x30;Cat 1;15
+MANZANA;Golden  Blanca (amarilla);Val Venosta;Italia;50x30;Cat 1;16
+MANZANA;Golden  Blanca (amarilla);Val Venosta;Italia;50x30;Cat 1;18
+MANZANA;Pinova;Val Venosta;Italia;50x30;Cat 1;16
+MANZANA;Granny Smith ;VOG;Italia;50x30;Cat 1;16
+MANZANA;Fuji;VOG;Italia;50x30;Cat 1;16
+MANZANA;Pink Lady ;CLUB;Italia;50x30;Cat 1;16
+MANZANA;Cosmic Crisp;CLUB;Italia;50x30;Cat 1;16
+MANZANA;Ambrosia;CLUB;Italia;50x30;Cat 1;16
+MANZANA;Ambrosia;CLUB;Italia;50x30;Cat 1;18
+MANZANA;Royal Gala;Genérica;Nueva Zelanda;Bushel;Cat 1;100
+LIMA;Tahiti;Genérica;Colombia;4,50;Cat 1;48
+UVA;Vittoria;Genérica;Italia;5,00;Cat 1;XL
+UVA;Arra 15 sweeties;Genérica;Italia;5,00;Cat 1;XL
+UVA;Maula (roja);Genérica;Italia;5,00;Cat 1;XL
+UVA;Parlieri (negra);Genérica;Italia;5,00;Cat 1;XL
+UVA;Sugraone (superior seedless);Orchidea;Egipto;6,00;Cat 1;XL
+UVA;Superior seedless;Moyca;España;5,00;Cat 1;XL
+UVA;Rally seedless;Moyca;España;5,00;Cat 1;XL
+KIWI;Hayward;Terraexport;Chile;10,00;Cat 1;25
+KIWI;Hayward;Terraexport;Chile;10,00;Cat 1;26
+KIWI;Hayward;Terraexport;Chile;10,00;Cat 1;27
+KIWI;Hayward;Terraexport;Chile;10,00;Cat 1;30
+KIWI;Hayward;Terraexport;Chile;10,00;Cat 1;33
+KIWI;Hayward;Fortaleza;Chile;10,00;Cat 1;25
+KIWI;Hayward;Fortaleza;Chile;10,00;Cat 1;27
+KIWI;Hayward;Fortaleza;Chile;10,00;Cat 1;30
+KIWI;Hayward;Rucaray;Chile;10,00;Cat 2;M
+KIWI;Hayward;Rucaray;Chile;10,00;Cat 2;L
+KIWI;Hayward;Rucaray;Chile;10,00;Cat 2;XL
+KIWI;Hayward;Zespri;Nueva Zelanda;10,00;Cat 1;22
+KIWI;Hayward;Zespri;Nueva Zelanda;10,00;Cat 1;25
+KIWI;Hayward;Zespri;Nueva Zelanda;10,00;Cat 1;27
+KIWI;Hayward;Zespri;Nueva Zelanda;10,00;Cat 1;30
+KIWI;Hayward;Zespri;Nueva Zelanda;3,50;Cat 1;30
+KIWI;SunGold;Zespri;Sungold;5,80;Cat 1;22
+KIWI;SunGold;Zespri;Sungold;5,80;Cat 1;25
+KIWI;SunGold;Zespri;Sungold;5,80;Cat 1;27
+KIWI;SunGold;Zespri;Sungold;5,80;Cat 1;33
+PIÑA;Del Monte;Del Monte;Costa Rica;12,00;Cat 1;5
+PIÑA;Del Monte;Del Monte;Costa Rica;12,00;Cat 1;6
+PIÑA;Del Monte;Del Monte;Costa Rica;12,00;Cat 1;Super6
+PIÑA;Del Monte;Del Monte;Costa Rica;12,00;Cat 1;7
+PIÑA;Baby;Del Monte;Kenya;6,00;Cat 1;9
+PIÑA;Honey Glow;Del Monte;Costa Rica;12,00;Cat 1;6
+PIÑA;Avión;Del Monte;Costa Rica;12,00;Cat 1;Super6
+PIÑA;Avión;Del Monte;Kenya;12,00;Cat 1;Super6
+PIÑA;Verde;Chiquita;Costa Rica;12,00;Cat 1;5
+PIÑA;Verde;Chiquita;Costa Rica;12,00;Cat 1;6
+PIÑA;ARUBA;Donatella;Costa Rica;12,00;Cat 1;5
+PIÑA;ARUBA;Donatella;Costa Rica;12,00;Cat 1;6
+PIÑA;ARUBA;Donatella;Costa Rica;12,00;Cat 1;7
+PIÑA;ARUBA;Donatella;Costa Rica;12,00;Cat 1;8
+"PLÁTANO
+MACHO";Maduro;Marielita;Colombia;22,00;Cat 1;STD
+"PLÁTANO
+MACHO";Maduro;DM;Colombia;22,00;Cat 1;STD
+"PLÁTANO
+MACHO";Maduro;Rosy;Colombia;22,00;Cat 1;STD
+"PLÁTANO
+MACHO";Verde;GoFresh;Ecuador;22,00;Cat 1;STD
+YUCA;Yuca;Jaguar;Costa Rica;18,00;Cat 1;STD
+COCO;Fresco;Aruba;India;;Cat 1;STD
+PAPAYA;Formosa;Aruba;Brasil;4,50;Cat 1;3
+PAPAYA;Formosa;Aruba;Brasil;4,50;Cat 1;4
+JENGIBRE;Jumbo;Aruba;China;5,00;Cat 1;
+"MANGO AÉREO
+";Kent;Genérica;México;5,50;Cat 1;8
+"MANGO AÉREO
+";Kent;Genérica;México;5,50;Cat 1;9
+"MANGO AÉREO
+";Kent;Genérica;México;5,50;Cat 1;10
+"MANGO AÉREO
+";Kent;Genérica;México;5,50;Cat 1;12
+"MANGO AÉREO
+";Kent;Puka;Perú;5,50;Cat 1;8
+"MANGO AÉREO
+";Kent;Puka;Perú;5,50;Cat 1;9
+"MANGO AÉREO
+";Kent;Puka;Perú;5,50;Cat 1;10
+"MANGO AÉREO
+";Kent;Puka;Perú;5,50;Cat 1;12
+Mango Baby;Mango Baby;Azucar;Colombia;2,00;Cat 1;STD
+MANGO BARCO;Palmer;Generica;Brasil;4,00;Cat 1;6
+MANGO BARCO;Palmer;Generica;Brasil;4,00;Cat 1;7
+MANGO BARCO;Palmer;Generica;Brasil;4,00;Cat 1;8
+MANGO BARCO;Tommy;Generica;Brasil;4,00;Cat 1;6
+MANGO BARCO;Tommy;Generica;Brasil;4,00;Cat 1;7
+MANGO BARCO;Tommy;Generica;Brasil;4,00;Cat 1;8
+AGUACATE;Hass;Aruba;España;4,00;Cat 1;16
+AGUACATE;Hass;Sublime;España;4,00;Cat 1;14
+NARANJA;Navel;Genérica;Sudáfrica;15,00;Cat 1;56
+NARANJA;Navel;Genérica;Sudáfrica;15,00;Cat 1;64
+NARANJA;Navel;Genérica;Sudáfrica;15,00;Cat 2;56
+NARANJA;Navel;Genérica;Sudáfrica;15,00;Cat 2;64
+NARANJA;Valencialate;Genérica;Egipto;BINS;Cat 1;72
+NARANJA;Valencialate;Genérica;Egipto;BINS;Cat 1;80
+NARANJA;Valencialate;Genérica;Egipto;BINS;Cat 1;88
+NARANJA;Valencialate;Genérica;Marruecos;15,00;Cat 1;80
+NARANJA;Valencialate;Genérica;Marruecos;15,00;Cat 1;88
+LIMÓN;Eureka;Genérica;Sudáfrica;15,00;Cat 1;75
+LIMÓN;Eureka;Genérica;Sudáfrica;15,00;Cat 1;88
+LIMÓN;Eureka;Genérica;Sudáfrica;15,00;Cat 1;100
+LIMÓN;Eureka;Genérica;Sudáfrica;15,00;Cat 1;113
+CALABAZA BUTTERNUT;Butternut;Genérica;Sudáfrica;10,00;Cat 1;8
+CALABAZA BUTTERNUT;Butternut;Genérica;Sudáfrica;10,00;Cat 1;10
+CALABAZA BUTTERNUT;Butternut;Genérica;Sudáfrica;10,00;Cat 1;12
+POMELO;StarRuby;Genérica;Sudáfrica;15,00;Cat 1;40
+POMELO;StarRuby;Genérica;Sudáfrica;15,00;Cat 1;45
+POMELO;StarRuby;Genérica;Sudáfrica;15,00;Cat 1;50
+POMELO;StarRuby;Genérica;Sudáfrica;15,00;Cat 1;55
+MANDARINA;Nova;Genérica;Sudáfrica;10,00;Cat 1;1
+MANDARINA;Nova;Genérica;Sudáfrica;10,00;Cat 1;1x
+MANDARINA;Nova;Genérica;Sudáfrica;10,00;Cat 1;1xx
+TOMATE RAMA;Rama;Genérica;Bélgica;5,00;Cat 1;SC
