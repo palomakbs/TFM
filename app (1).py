@@ -76,8 +76,8 @@ info_cliente = df_interno[df_interno['Cliente'] == cliente_seleccionado]
 if not info_cliente.empty:
     st.sidebar.write(f"**Fruta habitual:** {info_cliente['Fruta_Comercializada'].values[0]}")
     st.sidebar.write(f"**Precio histórico medio:** {info_cliente['Precio_Medio_Anteriores'].values[0]:.2f} €/kg")
-    st.sidebar.info(f"**Condiciones pactadas:**
-{info_cliente['Condiciones_Comerciales'].values[0]}")
+    st.sidebar.info(f"""**Condiciones pactadas:**
+{info_cliente['Condiciones_Comerciales'].values[0]}""")
 else:
     st.sidebar.write("Cliente nuevo / Sin condiciones históricas específicas.")
 
