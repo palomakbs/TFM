@@ -114,29 +114,13 @@ if prompt := st.chat_input("Ej: ¿A qué precio ofertamos 5.000 kg de plátano c
         rango_min = round(precio_recomendado - 0.08, 2)
         rango_max = round(precio_recomendado + 0.08, 2)
 
-        respuesta = f"""
-        **Precio recomendado para oferta:** **{precio_recomendado:.2f} €/kg**  *(Rango competitivo: {rango_min:.2f} €/kg - {rango_max:.2f} €/kg)*
+        # Construcción de la respuesta final estructurada
+        res_line1 = f"**Precio recomendado para oferta:** **{precio_recomendado:.2f} €/kg**  *(Rango competitivo: {rango_min:.2f} €/kg - {rango_max:.2f} €/kg)*\n\n---"
+        res_line2 = f"\n🔍 **Desglose de la recomendación:**\n\n* **1. Datos Internos de la Empresa (ERP):**\n  * **Cliente objetivo:** {cliente_seleccionado}\n  * **Histórico de precio medio:** `{precio_hist:.2f} €/kg`\n  * **Condiciones comerciales:** *\"{condiciones_txt}\"*\n  * **Volumen de la operación:** `{volumen_detectado:,} kg` de {producto_seleccionado}."
+        res_line3 = f"\n\n* **2. Referencia de Mercado Exterior (Búsqueda en Internet):**\n  * **Plaza de referencia:** {mercado_referencia}\n  * **Información obtenida en tiempo real:** *{dato_mercado_online}*"
+        res_line4 = f"\n\n* **3. Justificación de la Estrategia:**\n  El precio sugerido de **{precio_recomendado:.2f} €/kg** respeta el margen según las condiciones comerciales del cliente y ajusta la cifra al volumen solicitado, manteniéndose alineado con la tendencia de mercado obtenida de {mercado_referencia}."
 
-        ---
-        🔍 **Desglose de la recomendación:**
-
-        * **1. Datos Internos de la Empresa (ERP):**
-          * **Cliente objetivo:** {cliente_seleccionado}
-          * **Histórico de precio medio (años anteriores):** `{precio_hist:.2f} €/kg`
-          * **Condiciones comerciales acordadas:** *"{condiciones_txt}"*
-          * **Volumen de la operación:** `{volumen_detectado:,} kg` de {producto_seleccionado}.
-
-        * **2. Referencia de Mercado Exterior (Búsqueda en Internet):**
-          * **Plaza de referencia:** {mercado_referencia}
-          * **Información obtenida en tiempo real:** *{dato_mercado_online}*
-
-        * **3. Justificación de la Estrategia:**
-          El precio sugerido de **{precio_recomendado:.2f} €/kg** respeta el margen según las condiciones comerciales del cliente y ajusta la cifra al volumen solicitado, manteniéndose alineado con la tendencia de mercado obtenida de {mercado_referencia}.
-        """
-
-        st.markdown(respuesta)
-        st.session_state.messages.append({"role": "assistant", "content": respuesta})
-        """
+        respuesta = res_line1 + res_line2 + res_line3 + res_line4
 
         st.markdown(respuesta)
         st.session_state.messages.append({"role": "assistant", "content": respuesta})
